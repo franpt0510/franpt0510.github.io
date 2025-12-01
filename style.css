@@ -8,14 +8,14 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: #e0e0e0;
+    background-color: #1a1a1a;
 }
 
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #2d2d2d;
     position: relative;
     min-height: 100vh;
 }
@@ -33,11 +33,11 @@ body {
 .photo-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+    background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px dashed #999;
+    border: 2px dashed #666;
     position: relative;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .photo-text {
-    color: #666;
+    color: #999;
     font-size: 0.9em;
     text-align: center;
     padding: 20px;
@@ -57,12 +57,13 @@ body {
 
 /* Header Banner */
 .header-banner {
-    background-color: #c2185b;
+    background-color: #1a1a1a;
     color: #fff;
     padding: 40px 40px 40px 320px;
     margin-bottom: 0;
     position: relative;
     z-index: 1;
+    border-bottom: 2px solid #444;
 }
 
 .name {
@@ -133,13 +134,13 @@ body {
 }
 
 .contact-item a {
-    color: #e0e0e0;
+    color: #B0D4ED;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .contact-item a:hover {
-    color: #fff;
+    color: #87CEEB;
     text-decoration: underline;
 }
 
@@ -154,10 +155,47 @@ body {
     text-align: justify;
 }
 
+/* Images Section */
+.images-section {
+    margin-top: 30px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #666;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-text {
+    color: #999;
+    font-size: 0.85em;
+    text-align: center;
+    padding: 10px;
+}
+
 /* Right Column */
 .right-column {
     flex: 1;
-    background-color: #fff;
+    background-color: #2d2d2d;
     padding: 40px;
     padding-left: 50px;
 }
@@ -181,7 +219,7 @@ body {
     top: 30px;
     bottom: -40px;
     width: 2px;
-    background-color: #e0e0e0;
+    background-color: #555;
     z-index: 0;
 }
 
@@ -191,7 +229,7 @@ body {
 
 .section-header h2 {
     font-size: 1.5em;
-    color: #2c3e50;
+    color: #e0e0e0;
     font-weight: 700;
     margin-left: 15px;
     text-transform: uppercase;
@@ -210,14 +248,14 @@ body {
 }
 
 .bullet-point.primary {
-    background-color: #c2185b;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px #c2185b;
+    background-color: #B0D4ED;
+    border: 3px solid #2d2d2d;
+    box-shadow: 0 0 0 2px #B0D4ED;
 }
 
 .bullet-point.secondary {
-    background-color: #fff;
-    border: 2px solid #c2185b;
+    background-color: #2d2d2d;
+    border: 2px solid #B0D4ED;
     width: 12px;
     height: 12px;
 }
@@ -233,7 +271,7 @@ body {
 
 .info-group h3 {
     font-size: 1.1em;
-    color: #2c3e50;
+    color: #e0e0e0;
     font-weight: 600;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -247,17 +285,17 @@ body {
 
 .info-label {
     font-weight: 600;
-    color: #555;
+    color: #b0b0b0;
     min-width: 120px;
     margin-right: 10px;
 }
 
 .info-value {
-    color: #333;
+    color: #e0e0e0;
 }
 
 .skills-list {
-    color: #555;
+    color: #d0d0d0;
     line-height: 1.8;
 }
 
@@ -276,12 +314,12 @@ body {
 
 .achievement-title {
     font-weight: 600;
-    color: #2c3e50;
+    color: #e0e0e0;
     margin-bottom: 3px;
 }
 
 .achievement-detail {
-    color: #7f8c8d;
+    color: #b0b0b0;
     font-size: 0.9em;
 }
 
@@ -298,25 +336,25 @@ body {
 
 .project-title {
     font-size: 1.2em;
-    color: #2c3e50;
+    color: #e0e0e0;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
 .project-description {
-    color: #555;
+    color: #d0d0d0;
     margin-bottom: 8px;
     line-height: 1.6;
 }
 
 .project-tech {
-    color: #7f8c8d;
+    color: #b0b0b0;
     font-size: 0.9em;
     margin-bottom: 8px;
 }
 
 .project-link {
-    color: #c2185b;
+    color: #B0D4ED;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -324,7 +362,7 @@ body {
 }
 
 .project-link:hover {
-    color: #a0154a;
+    color: #87CEEB;
     text-decoration: underline;
 }
 
@@ -389,5 +427,9 @@ body {
     .info-label {
         min-width: auto;
         margin-bottom: 3px;
+    }
+
+    .image-grid {
+        gap: 10px;
     }
 }
