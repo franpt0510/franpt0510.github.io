@@ -3,115 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - CV</title>
+    <title>Your Name - Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="name">Your Name</h1>
-            <p class="title">Your Professional Title</p>
-            <div class="contact-info">
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
-                <span>•</span>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-                <span>•</span>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <span>•</span>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <div class="page-container">
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <div class="photo-placeholder">
+                <span class="photo-text">Add Your Photo</span>
             </div>
-        </header>
+        </div>
 
-        <main>
-            <section class="section">
-                <h2>About</h2>
-                <p class="about-text">
-                    Write a brief professional summary about yourself, your expertise, and what you're passionate about.
-                </p>
-            </section>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <h1 class="athlete-name">YOUR NAME</h1>
+            <p class="class-year">CLASS OF 20XX</p>
+            <p class="team-school">TEAM/SCHOOL NAME</p>
+        </div>
 
-            <section class="section">
-                <h2>Experience</h2>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Job Title</h3>
-                        <span class="date">Month Year - Present</span>
+        <!-- Main Content Container -->
+        <div class="content-wrapper">
+            <!-- Left Column: Contact & Biography -->
+            <aside class="left-column">
+                <section class="contact-section">
+                    <h2 class="section-title">CONTACT INFORMATION</h2>
+                    
+                    <div class="contact-group">
+                        <h3 class="contact-label">ATHLETE:</h3>
+                        <p class="contact-item">First Last Name</p>
+                        <p class="contact-item">athleteemail.com</p>
+                        <p class="contact-item">123-456-7890</p>
                     </div>
-                    <p class="company">Company Name</p>
-                    <ul class="experience-list">
-                        <li>Key achievement or responsibility</li>
-                        <li>Another important accomplishment</li>
-                        <li>Additional relevant experience</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Previous Job Title</h3>
-                        <span class="date">Month Year - Month Year</span>
+                    <div class="contact-group">
+                        <h3 class="contact-label">LINKEDIN:</h3>
+                        <p class="contact-item">
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                        </p>
                     </div>
-                    <p class="company">Previous Company</p>
-                    <ul class="experience-list">
-                        <li>Key achievement or responsibility</li>
-                        <li>Another important accomplishment</li>
-                    </ul>
-                </div>
-            </section>
 
-            <section class="section">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3>Degree Name</h3>
-                        <span class="date">Year - Year</span>
+                    <div class="contact-group">
+                        <h3 class="contact-label">GITHUB:</h3>
+                        <p class="contact-item">
+                            <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                        </p>
                     </div>
-                    <p class="institution">University Name</p>
-                    <p class="details">Relevant details, honors, or achievements</p>
-                </div>
-            </section>
+                </section>
 
-            <section class="section">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <p>Python, JavaScript, Java, C++</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Frameworks & Tools</h4>
-                        <p>React, Node.js, Git, Docker</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Other Skills</h4>
-                        <p>Project Management, Agile, Communication</p>
-                    </div>
-                </div>
-            </section>
+                <section class="biography-section">
+                    <h2 class="section-title">MINI BIOGRAPHY</h2>
+                    <p class="bio-text">
+                        Write a brief biography about yourself, your background, interests, and what drives you. This section should give readers a sense of who you are beyond your achievements.
+                    </p>
+                </section>
+            </aside>
 
-            <section class="section">
-                <h2>Projects</h2>
-                <div class="project-item">
-                    <h3>Project Name</h3>
-                    <p class="project-description">Brief description of the project and its impact.</p>
-                    <p class="project-tech">Technologies: React, Node.js, MongoDB</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </section>
-        </main>
+            <!-- Right Column: Main Content -->
+            <main class="right-column">
+                <!-- Academic Profile + Skills -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <span class="bullet-point primary"></span>
+                        <h2>ACADEMIC PROFILE</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="info-group">
+                            <h3>EDUCATION</h3>
+                            <div class="info-item">
+                                <p class="info-label">Degree/Program:</p>
+                                <p class="info-value">Your Degree Name</p>
+                            </div>
+                            <div class="info-item">
+                                <p class="info-label">Institution:</p>
+                                <p class="info-value">University/School Name</p>
+                            </div>
+                            <div class="info-item">
+                                <p class="info-label">Year:</p>
+                                <p class="info-value">20XX - 20XX</p>
+                            </div>
+                        </div>
 
-        <footer class="footer">
-            <p>Last updated: <span id="current-date"></span></p>
-        </footer>
+                        <div class="info-group">
+                            <h3>ACADEMIC SCORES</h3>
+                            <div class="info-item">
+                                <p class="info-label">GPA:</p>
+                                <p class="info-value">4.0</p>
+                            </div>
+                            <div class="info-item">
+                                <p class="info-label">SAT:</p>
+                                <p class="info-value">1600</p>
+                            </div>
+                            <div class="info-item">
+                                <p class="info-label">ACT:</p>
+                                <p class="info-value">36</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="section-header">
+                        <span class="bullet-point primary"></span>
+                        <h2>SKILLS</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="info-group">
+                            <h3>PROGRAMMING LANGUAGES</h3>
+                            <p class="skills-list">Python, JavaScript, Java, C++</p>
+                        </div>
+                        <div class="info-group">
+                            <h3>FRAMEWORKS & TOOLS</h3>
+                            <p class="skills-list">React, Node.js, Git, Docker</p>
+                        </div>
+                        <div class="info-group">
+                            <h3>OTHER SKILLS</h3>
+                            <p class="skills-list">Project Management, Agile, Communication</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Extracurricular Achievements -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <span class="bullet-point primary"></span>
+                        <h2>EXTRACURRICULAR ACHIEVEMENTS</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="info-group">
+                            <h3>ACHIEVEMENTS & AWARDS</h3>
+                            <ul class="achievement-list">
+                                <li>
+                                    <span class="bullet-point secondary"></span>
+                                    <div>
+                                        <p class="achievement-title">2024 Achievement Name</p>
+                                        <p class="achievement-detail">PLACE HOLDER</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bullet-point secondary"></span>
+                                    <div>
+                                        <p class="achievement-title">2023 Achievement Name</p>
+                                        <p class="achievement-detail">PLACE HOLDER</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bullet-point secondary"></span>
+                                    <div>
+                                        <p class="achievement-title">2022 Achievement Name</p>
+                                        <p class="achievement-detail">PLACE HOLDER</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-group">
+                            <h3>EXTRACURRICULAR ACTIVITIES</h3>
+                            <ul class="achievement-list">
+                                <li>
+                                    <span class="bullet-point secondary"></span>
+                                    <div>
+                                        <p class="achievement-title">Key Club, Treasurer</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bullet-point secondary"></span>
+                                    <div>
+                                        <p class="achievement-title">Future Farmers of America (FFA)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <span class="bullet-point primary"></span>
+                        <h2>PROJECTS</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="bullet-point secondary"></span>
+                                <div>
+                                    <h3 class="project-title">Project Name</h3>
+                                    <p class="project-description">Brief description of the project and its impact.</p>
+                                    <p class="project-tech">Technologies: React, Node.js, MongoDB</p>
+                                    <a href="#" class="project-link">View Project →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="bullet-point secondary"></span>
+                                <div>
+                                    <h3 class="project-title">Another Project</h3>
+                                    <p class="project-description">Brief description of another project.</p>
+                                    <p class="project-tech">Technologies: Python, Flask, PostgreSQL</p>
+                                    <a href="#" class="project-link">View Project →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
-
-    <script>
-        // Set current date
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        });
-    </script>
 </body>
 </html>
-
