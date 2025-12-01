@@ -57,7 +57,7 @@ body {
 
 /* Header Banner */
 .header-banner {
-    background-color: #1a1a1a;
+    background-color: #c2185b;
     color: #fff;
     padding: 40px 40px 40px 320px;
     margin-bottom: 0;
@@ -248,14 +248,14 @@ body {
 }
 
 .bullet-point.primary {
-    background-color: #B0D4ED;
-    border: 3px solid #2d2d2d;
-    box-shadow: 0 0 0 2px #B0D4ED;
+    background-color: #c2185b;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #c2185b;
 }
 
 .bullet-point.secondary {
-    background-color: #2d2d2d;
-    border: 2px solid #B0D4ED;
+    background-color: #fff;
+    border: 2px solid #c2185b;
     width: 12px;
     height: 12px;
 }
