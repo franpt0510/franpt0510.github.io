@@ -353,16 +353,18 @@ body {
     margin-bottom: 8px;
 }
 
-.project-link {
-    color: #B0D4ED;
+.project-link,
+.project-item a {
+    color: #87CEEB;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
     display: inline-block;
 }
 
-.project-link:hover {
-    color: #87CEEB;
+.project-link:hover,
+.project-item a:hover {
+    color: #B0D4ED;
     text-decoration: underline;
 }
 
