@@ -43,6 +43,9 @@
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
+    
+    /* Layout */
+    --navbar-height: 70px; /* Navbar height for spacing calculations */
 }
 
 /* ============================================
@@ -129,6 +132,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--navbar-height);
     z-index: 1000;
     background: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(10px);
@@ -253,7 +257,7 @@ body {
 
     .navbar-links {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-height);
         left: 0;
         width: 100%;
         background: var(--bg-sidebar);
@@ -307,6 +311,7 @@ body {
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
+    padding-top: var(--navbar-height); /* Space for fixed navbar */
 }
 
 /* ============================================
@@ -315,9 +320,9 @@ body {
 .sidebar {
     position: fixed;
     left: 0;
-    top: 0;
+    top: var(--navbar-height); /* Start below navbar */
     width: 320px;
-    height: 100vh;
+    height: calc(100vh - var(--navbar-height)); /* Full height minus navbar */
     background: var(--bg-sidebar);
     border-right: 1px solid var(--border-color);
     padding: var(--spacing-lg);
@@ -489,7 +494,7 @@ body {
     margin-left: 320px;
     width: calc(100% - 320px);
     padding: var(--spacing-xl);
-    padding-top: calc(var(--spacing-xl) + 80px); /* Account for fixed navbar */
+    padding-top: var(--spacing-xl); /* Navbar spacing handled by main-container */
 }
 
 /* Page Header */
@@ -816,10 +821,15 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 968px) {
+    :root {
+        --navbar-height: 60px; /* Slightly smaller navbar on mobile */
+    }
+
     .sidebar {
         position: relative;
         width: 100%;
         height: auto;
+        top: 0; /* Reset top position for mobile */
         border-right: none;
         border-bottom: 1px solid var(--border-color);
     }
@@ -827,7 +837,7 @@ body {
     .main-content {
         margin-left: 0;
         width: 100%;
-        padding-top: calc(var(--spacing-xl) + 80px); /* Account for fixed navbar */
+        padding-top: var(--spacing-xl); /* Navbar spacing handled by main-container */
     }
 
     .mobile-nav {

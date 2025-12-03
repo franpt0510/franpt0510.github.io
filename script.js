@@ -20,7 +20,10 @@ handleNavbarScroll(); // Initial check
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        const offset = 100; // Offset for fixed navbar
+        // Get navbar height from CSS variable or use default
+        const navbarHeight = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue('--navbar-height')) || 70;
+        const offset = navbarHeight + 20; // Navbar height + small buffer
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -84,7 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const sections = ['academico', 'habilidades', 'extracurriculares', 'proyectos'];
 
 function updateActiveSection() {
-    const scrollPosition = window.pageYOffset + 150;
+    // Get navbar height from CSS variable or use default
+    const navbarHeight = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--navbar-height')) || 70;
+    const scrollPosition = window.pageYOffset + navbarHeight + 50; // Account for navbar
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Remove active class from all links
