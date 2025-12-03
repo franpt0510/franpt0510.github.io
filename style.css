@@ -354,7 +354,9 @@ body {
 }
 
 .project-link,
-.project-item a {
+.project-item a,
+.project-link:visited,
+.project-item a:visited {
     color: #87CEEB;
     text-decoration: none;
     font-weight: 500;
