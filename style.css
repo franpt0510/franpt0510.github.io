@@ -320,9 +320,9 @@ body {
 .sidebar {
     position: fixed;
     left: 0;
-    top: var(--navbar-height); /* Start below navbar */
+    top: calc(var(--navbar-height) + 10px); /* Start below navbar with buffer */
     width: 320px;
-    height: calc(100vh - var(--navbar-height)); /* Full height minus navbar */
+    height: calc(100vh - var(--navbar-height) - 10px); /* Full height minus navbar and buffer */
     background: var(--bg-sidebar);
     border-right: 1px solid var(--border-color);
     padding: var(--spacing-lg);
