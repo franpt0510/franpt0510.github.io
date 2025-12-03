@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Profile</title>
+    <title>Francisco Pérez Trofimoff - Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <button class="nav-btn" onclick="scrollToSection('contact')">Contacto</button>
+            <button class="nav-btn" onclick="scrollToSection('academico')">Perfil Académico</button>
+            <button class="nav-btn" onclick="scrollToSection('habilidades')">Habilidades</button>
+            <button class="nav-btn" onclick="scrollToSection('extracurriculares')">Extracurriculares</button>
+            <button class="nav-btn" onclick="scrollToSection('proyectos')">Proyectos</button>
+        </div>
+    </nav>
+
     <div class="page-container">
         <!-- Photo Section -->
         <div class="photo-section">
@@ -26,14 +37,9 @@
         <div class="content-wrapper">
             <!-- Left Column: Contact & Biography -->
             <aside class="left-column">
-                <section class="contact-section">
+                <section id="contact" class="contact-section">
                     <h2 class="section-title">CONTACT INFORMATION</h2>
                     
-                    <div class="contact-group">
-                        <h3 class="contact-label">EMAIL:</h3>
-                        <p class="contact-item">your.email@example.com</p>
-                    </div>
-
                     <div class="contact-group">
                         <h3 class="contact-label">correo:</h3>
                         <p class="contact-item">franpt.0510@gmail.com</p>
@@ -80,7 +86,7 @@
             <!-- Right Column: Main Content -->
             <main class="right-column">
                 <!-- Academic Profile + Skills -->
-                <section class="content-section">
+                <section id="academico" class="content-section">
                     <div class="section-header">
                         <span class="bullet-point primary"></span>
                         <h2>PERFIL ACADEMICO</h2>
@@ -109,7 +115,7 @@
 
                 </section>
 
-                <section class="content-section">
+                <section id="habilidades" class="content-section">
                     <div class="section-header">
                         <span class="bullet-point primary"></span>
                         <h2>HABILIDADES TECNICAS</h2>
@@ -131,7 +137,7 @@
                 </section>
 
                 <!-- Extracurricular Achievements -->
-                <section class="content-section">
+                <section id="extracurriculares" class="content-section">
                     <div class="section-header">
                         <span class="bullet-point primary"></span>
                         <h2>EXTRACURRICULARES</h2>
@@ -203,7 +209,7 @@
                 </section>
 
                 <!-- Projects -->
-                <section class="content-section">   
+                <section id="proyectos" class="content-section">   
                     <div class="section-header">
                         <span class="bullet-point primary"></span>
                         <h2>PROYECTOS + CERTIFICACIONES</h2>
@@ -254,5 +260,43 @@
             </main>
         </div>
     </div>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Highlight active nav button on scroll
+        window.addEventListener('scroll', function() {
+            const sections = ['contact', 'academico', 'habilidades', 'extracurriculares', 'proyectos'];
+            const navButtons = document.querySelectorAll('.nav-btn');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionElement = document.getElementById(section);
+                if (sectionElement) {
+                    const sectionTop = sectionElement.offsetTop;
+                    const sectionHeight = sectionElement.clientHeight;
+                    if (window.pageYOffset >= (sectionTop - 200)) {
+                        current = section;
+                    }
+                }
+            });
+
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(current)) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
