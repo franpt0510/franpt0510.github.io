@@ -1,302 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Pérez Trofimoff - Profile</title>
+    <title>Francisco Pérez Trofimoff - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Menu -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <button class="nav-btn" onclick="scrollToSection('contact')">Contacto</button>
-            <button class="nav-btn" onclick="scrollToSection('academico')">Perfil Académico</button>
-            <button class="nav-btn" onclick="scrollToSection('habilidades')">Habilidades</button>
-            <button class="nav-btn" onclick="scrollToSection('extracurriculares')">Extracurriculares</button>
-            <button class="nav-btn" onclick="scrollToSection('proyectos')">Proyectos</button>
-        </div>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-btn" onclick="scrollToSection('academico')">Académico</button>
+        <button class="mobile-nav-btn" onclick="scrollToSection('habilidades')">Habilidades</button>
+        <button class="mobile-nav-btn" onclick="scrollToSection('extracurriculares')">Extracurriculares</button>
+        <button class="mobile-nav-btn" onclick="scrollToSection('proyectos')">Proyectos</button>
     </nav>
 
-    <div class="page-container">
-        <!-- Photo Section -->
-        <div class="photo-section">
-            <div class="photo-placeholder">
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Fixed Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Profile Photo -->
+            <div class="profile-photo">
                 <img src="images/foto1.jpeg" alt="Francisco Pérez Trofimoff">
             </div>
-        </div>
 
-        <!-- Header Banner -->
-        <div class="header-banner">
-            <h1 class="name">Francisco Pérez Trofimoff</h1>
-            <p class="class-year">Ciencia de Datos</p>
-            <p class="title">Instituto Tecnológico Autónomo de México (ITAM)</p>
-        </div>
-
-        <!-- Main Content Container -->
-        <div class="content-wrapper">
-            <!-- Left Column: Contact & Biography -->
-            <aside class="left-column">
-                <section id="contact" class="contact-section">
-                    <h2 class="section-title">CONTACT INFORMATION</h2>
-                    
-                    <div class="contact-group">
-                        <h3 class="contact-label">correo:</h3>
-                        <p class="contact-item">franpt.0510@gmail.com</p>
+            <!-- Contact Information -->
+            <div class="sidebar-section" id="contact">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <a href="mailto:franpt.0510@gmail.com" class="contact-link">franpt.0510@gmail.com</a>
                     </div>
-
-                    <div class="contact-group">
-                        <h3 class="contact-label">NUMERO DE TELEFONO:</h3>
-                        <p class="contact-item">+52 (442) 747 0772</p>
-                        </p>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <a href="tel:+524427470772" class="contact-link">+52 (442) 747 0772</a>
                     </div>
-
-                    <div class="contact-group">
-                        <h3 class="contact-label">GITHUB:</h3>
-                        <p class="contact-item">
-                            <a href="https://github.com/FRANPT0510" target="_blank">github.com/FRANPT0510</a>
-                        </p>
+                    <div class="contact-item">
+                        <span class="contact-icon">💻</span>
+                        <a href="https://github.com/FRANPT0510" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/FRANPT0510</a>
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <section class="biography-section">
-                    <h2 class="section-title">MINI BIOGRAFIA</h2>
-                    <p class="bio-text">
-                        Soy Francisco Pérez, tengo 20 años y soy alumno foráneo de Querétaro estudiando en el ITAM. Soy alguien apasionado por el deporte y me encanta aprender de los datos que nos rodean. Competí natación de alto rendimiento por varios años y ahora corro y entreno por gusto.
-                    </p>
-                </section>  
-                <section class="images-section">
-                    <div class="image-grid">
-                        <div class="image-placeholder">
-                            <img src="images/foto2.jpeg" alt="Image 2">
-                        </div>
-                        <div class="image-placeholder">
-                            <img src="images/foto3.jpeg" alt="Image 3">
-                        </div>
-                        <div class="image-placeholder">
-                            <img src="images/foto4.jpeg" alt="Image 4">
-                        </div>
-                        <div class="image-placeholder">
-                            <img src="images/foto5.jpeg" alt="Image 5">
+            <!-- Biography -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Mini Biografía</h3>
+                <p class="bio-text">
+                    Soy Francisco Pérez, tengo 20 años y soy alumno foráneo de Querétaro estudiando en el ITAM. Soy alguien apasionado por el deporte y me encanta aprender de los datos que nos rodean. Competí natación de alto rendimiento por varios años y ahora corro y entreno por gusto.
+                </p>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Galería</h3>
+                <div class="photo-gallery">
+                    <div class="gallery-item" onclick="openLightbox('images/foto2.jpeg')">
+                        <img src="images/foto2.jpeg" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
                         </div>
                     </div>
-                </section>
-            </aside>    
-
-            <!-- Right Column: Main Content -->
-            <main class="right-column">
-                <!-- Academic Profile + Skills -->
-                <section id="academico" class="content-section">
-                    <div class="section-header">
-                        <span class="bullet-point primary"></span>
-                        <h2>PERFIL ACADEMICO</h2>
-                    </div>
-                    <div class="section-content">
-                        <div class="info-group">
-                            <h3>EDUCACION</h3>
-                            <div class="info-item">
-                                <p class="info-label">Carrera:</p>
-                                <p class="info-value">Ciencia de Datos</p>
-                            </div>
-                            <div class="info-item">
-                                <p class="info-label">Institución:</p>
-                                <p class="info-value">Instituto Tecnológico Autónomo de México (ITAM)</p>
-                            </div>
-                            
-                        </div>
-
-                        <div class="info-group">
-                            <h3>PREPARATORIA</h3>
-                            <div class="info-item">
-                                <p class="info-label">PrepaTec Campus Querétaro</p>
-                                <p class="info-value">Promedio: 9.1</p>
-                            </div>
-                        </div>
-
-                </section>
-
-                <section id="habilidades" class="content-section">
-                    <div class="section-header">
-                        <span class="bullet-point primary"></span>
-                        <h2>HABILIDADES TECNICAS</h2>
-                    </div>
-                    <div class="section-content">
-                        <div class="info-group">
-                            <h3>LENGUAJES DE PROGRAMACION</h3>
-                            <p class="skills-list">Python, JavaScript, Java, SQL, R, HTML</p>
-                        </div>
-                        <div class="info-group">
-                            <h3>HERRAMIENTAS</h3>
-                            <p class="skills-list">Git, Github, numpy, pandas, matplotlib, FastApi</p>
-                        </div>
-                        <div class="info-group">
-                            <h3>HABILIDADES + INTERESES</h3>
-                            <p class="skills-list">Analisis de datos para predicciones deportivas, Liderazgo, Gestión de proyectos</p>
+                    <div class="gallery-item" onclick="openLightbox('images/foto3.jpeg')">
+                        <img src="images/foto3.jpeg" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
                         </div>
                     </div>
-                </section>
-
-                <!-- Extracurricular Achievements -->
-                <section id="extracurriculares" class="content-section">
-                    <div class="section-header">
-                        <span class="bullet-point primary"></span>
-                        <h2>EXTRACURRICULARES</h2>
-                    </div>
-                    <div class="section-content">
-                        <div class="info-group">
-                            <h3> LOGROS NOTABLES DEPORTIVOS</h3>
-                            <ul class="achievement-list">
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">1er Lugar Nacional Relevo 4x200 metros libre (natación)</p>
-                                        <p class="achievement-detail">Nacional de natación 2022 Curso Corto, Guadalajara, México</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">3er Lugar Nacional Relevo 4x200 metros libre (natación)</p>
-                                        <p class="achievement-detail">Olimpiada Nacional (Juegos CONADE) 2022, Tijuana, México</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">5to Lugar Individual 5kms aguas abiertas (natación)</p>
-                                        <p class="achievement-detail">Olimpiada Nacional (Juegos CONADE) 2021, Puerto Vallarta, México</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="info-group">
-                            <h3>OTROS LOGROS EXTRACURRICULARES</h3>
-                            <ul class="achievement-list">
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">2x Medallista para Querétaro en nacionales de natación FMN</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">3x seleccionado estatal para nacional de natación FMN</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">3x seleccionado Olimpiada Nacional (Juegos CONADE) en aguas abiertas (2020,2021,2022)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">2x seleccionado Olimpiada Nacional (Juegos CONADE) en aguas natacion (2021,2022)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="bullet-point secondary"></span>
-                                    <div>
-                                        <p class="achievement-title">1x Maratón de la Ciudad de México (2025)</p>
-                                    </div>
-                                </li>
-                            </ul>
+                    <div class="gallery-item" onclick="openLightbox('images/foto4.jpeg')">
+                        <img src="images/foto4.jpeg" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
                         </div>
                     </div>
-                </section>
-
-                <!-- Projects -->
-                <section id="proyectos" class="content-section">   
-                    <div class="section-header">
-                        <span class="bullet-point primary"></span>
-                        <h2>PROYECTOS + CERTIFICACIONES</h2>
+                    <div class="gallery-item" onclick="openLightbox('images/foto5.jpeg')">
+                        <img src="images/foto5.jpeg" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
                     </div>
-                    <div class="section-content">
-                        <div class="project-item">
-                            <div class="project-header">
-                                <span class="bullet-point secondary"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="page-header">
+                <h1 class="main-title">Francisco Pérez Trofimoff</h1>
+                <p class="subtitle">Ciencia de Datos</p>
+                <p class="institution">Instituto Tecnológico Autónomo de México (ITAM)</p>
+            </header>
+
+            <!-- Perfil Académico -->
+            <section id="academico" class="content-card fade-in">
+                <div class="card-header">
+                    <div class="accent-line"></div>
+                    <h2 class="section-title">Perfil Académico</h2>
+                </div>
+                <div class="card-body">
+                    <div class="info-card">
+                        <h3 class="info-title">Educación</h3>
+                        <div class="info-row">
+                            <span class="info-label">Carrera:</span>
+                            <span class="info-value">Ciencia de Datos</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Institución:</span>
+                            <span class="info-value">Instituto Tecnológico Autónomo de México (ITAM)</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-title">Preparatoria</h3>
+                        <div class="info-row">
+                            <span class="info-label">PrepaTec Campus Querétaro</span>
+                            <span class="info-value">Promedio: 9.1</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habilidades Técnicas -->
+            <section id="habilidades" class="content-card fade-in">
+                <div class="card-header">
+                    <div class="accent-line"></div>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                </div>
+                <div class="card-body">
+                    <div class="info-card">
+                        <h3 class="info-title">Lenguajes de Programación</h3>
+                        <p class="skills-list">Python, JavaScript, Java, SQL, R, HTML</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-title">Herramientas</h3>
+                        <p class="skills-list">Git, Github, numpy, pandas, matplotlib, FastApi</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="info-title">Habilidades + Intereses</h3>
+                        <p class="skills-list">Análisis de datos para predicciones deportivas, Liderazgo, Gestión de proyectos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extracurriculares -->
+            <section id="extracurriculares" class="content-card fade-in">
+                <div class="card-header">
+                    <div class="accent-line"></div>
+                    <h2 class="section-title">Extracurriculares</h2>
+                </div>
+                <div class="card-body">
+                    <div class="info-card">
+                        <h3 class="info-title">Logros Notables Deportivos</h3>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
                                 <div>
-                                    <h3 class="project-title">CERTIFICACIÓN: Applied Python Pandas</h3>
-                                    <p class="project-description">Proporcionado por UDEMY</p>
-                                    <a class="project-link" href="https://www.udemy.com/share/10cRkX3@iDUraWwwdYcgEPB3rsK4uoQKUwFZdgf6_XMrGF2b4m7o6uOCOQaZNiA5cvzmKADYvA==/" target="_blank" rel="noreferrer noopener">Ver certificación en UDEMY</a>
+                                    <p class="achievement-title">1er Lugar Nacional Relevo 4x200 metros libre (natación)</p>
+                                    <p class="achievement-detail">Nacional de natación 2022 Curso Corto, Guadalajara, México</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-header">
-                                <span class="bullet-point secondary"></span>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
                                 <div>
-                                    <h3 class="project-title">PROYECTO: Usando datos para argumentar el caso de LeBron como el GOAT</h3>
-                                    <p class="project-description">Utilizando datos de la NBA desde 1946</p>
-                                    <a class="project-link" href="https://docs.google.com/document/d/1o7pI7NH07MVBUrbhT8jm2Po2RP1Mo2VCzbwRIEPS7fE/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Ver ensayo argumentativo</a>
+                                    <p class="achievement-title">3er Lugar Nacional Relevo 4x200 metros libre (natación)</p>
+                                    <p class="achievement-detail">Olimpiada Nacional (Juegos CONADE) 2022, Tijuana, México</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-header">
-                                <span class="bullet-point secondary"></span>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
                                 <div>
-                                    <h3 class="project-title">PROYECTO: Manejo de datos para analizar patrones sobre crimen en chicago</h3>
-                                    <p class="project-description">Utilización de pyspark, pandas y matplotlib</p>
-                                    <a class="project-link" href="https://docs.google.com/document/d/1y3FaGmiXb3xGh6UNzuNPj-vUE0_eQCNEIp5nBhrWraM/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Reporte escríto de proyecto</a>
+                                    <p class="achievement-title">5to Lugar Individual 5kms aguas abiertas (natación)</p>
+                                    <p class="achievement-detail">Olimpiada Nacional (Juegos CONADE) 2021, Puerto Vallarta, México</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-header">
-                                <span class="bullet-point secondary"></span>
-                                <div>
-                                    <h3 class="project-title">PROYECTO: Analisis de datos financieros para entender el mundo moderno</h3>
-                                    <p class="project-description">Utilización de MongoDB, python, y matplotlib</p>
-                                    <a class="project-link" href="https://docs.google.com/document/d/1_VyUgMPcwkAahOa3pQf2mD_bd6JdnxOSdbAsovTxgE0/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Reporte escríto de proyecto</a>
-                                </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
-                </section>
-            </main>
-        </div>
+                    <div class="info-card">
+                        <h3 class="info-title">Otros Logros Extracurriculares</h3>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
+                                <div>
+                                    <p class="achievement-title">2x Medallista para Querétaro en nacionales de natación FMN</p>
+                                </div>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
+                                <div>
+                                    <p class="achievement-title">3x seleccionado estatal para nacional de natación FMN</p>
+                                </div>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
+                                <div>
+                                    <p class="achievement-title">3x seleccionado Olimpiada Nacional (Juegos CONADE) en aguas abiertas (2020,2021,2022)</p>
+                                </div>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
+                                <div>
+                                    <p class="achievement-title">2x seleccionado Olimpiada Nacional (Juegos CONADE) en aguas natación (2021,2022)</p>
+                                </div>
+                            </li>
+                            <li class="achievement-item">
+                                <span class="bullet-accent"></span>
+                                <div>
+                                    <p class="achievement-title">1x Maratón de la Ciudad de México (2025)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proyectos + Certificaciones -->
+            <section id="proyectos" class="content-card fade-in">
+                <div class="card-header">
+                    <div class="accent-line"></div>
+                    <h2 class="section-title">Proyectos + Certificaciones</h2>
+                </div>
+                <div class="card-body">
+                    <div class="project-card">
+                        <h3 class="project-title">CERTIFICACIÓN: Applied Python Pandas</h3>
+                        <p class="project-description">Proporcionado por UDEMY</p>
+                        <a href="https://www.udemy.com/share/10cRkX3@iDUraWwwdYcgEPB3rsK4uoQKUwFZdgf6_XMrGF2b4m7o6uOCOQaZNiA5cvzmKADYvA==/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            Ver certificación en UDEMY
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">PROYECTO: Usando datos para argumentar el caso de LeBron como el GOAT</h3>
+                        <p class="project-description">Utilizando datos de la NBA desde 1946</p>
+                        <a href="https://docs.google.com/document/d/1o7pI7NH07MVBUrbhT8jm2Po2RP1Mo2VCzbwRIEPS7fE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            Ver ensayo argumentativo
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">PROYECTO: Manejo de datos para analizar patrones sobre crimen en chicago</h3>
+                        <p class="project-description">Utilización de pyspark, pandas y matplotlib</p>
+                        <a href="https://docs.google.com/document/d/1y3FaGmiXb3xGh6UNzuNPj-vUE0_eQCNEIp5nBhrWraM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            Reporte escrito de proyecto
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">PROYECTO: Análisis de datos financieros para entender el mundo moderno</h3>
+                        <p class="project-description">Utilización de MongoDB, python, y matplotlib</p>
+                        <a href="https://docs.google.com/document/d/1_VyUgMPcwkAahOa3pQf2mD_bd6JdnxOSdbAsovTxgE0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            Reporte escrito de proyecto
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script>
-        // Smooth scroll function
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Lightbox Image">
+    </div>
 
-        // Highlight active nav button on scroll
-        window.addEventListener('scroll', function() {
-            const sections = ['contact', 'academico', 'habilidades', 'extracurriculares', 'proyectos'];
-            const navButtons = document.querySelectorAll('.nav-btn');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionElement = document.getElementById(section);
-                if (sectionElement) {
-                    const sectionTop = sectionElement.offsetTop;
-                    const sectionHeight = sectionElement.clientHeight;
-                    if (window.pageYOffset >= (sectionTop - 200)) {
-                        current = section;
-                    }
-                }
-            });
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
 
-            navButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(current)) {
-                    btn.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
