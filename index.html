@@ -13,12 +13,34 @@
     <!-- Animated Background -->
     <div class="animated-bg"></div>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" id="mobileNav">
-        <button class="mobile-nav-btn" onclick="scrollToSection('academico')">Académico</button>
-        <button class="mobile-nav-btn" onclick="scrollToSection('habilidades')">Habilidades</button>
-        <button class="mobile-nav-btn" onclick="scrollToSection('extracurriculares')">Extracurriculares</button>
-        <button class="mobile-nav-btn" onclick="scrollToSection('proyectos')">Proyectos</button>
+    <!-- ============================================
+         TOP NAVIGATION BAR
+         ============================================
+         This navbar is sticky/fixed at the top.
+         Section IDs (academico, habilidades, etc.) must stay unchanged.
+         To edit menu items, modify the <a> tags below.
+    -->
+    <nav class="top-navbar" id="topNavbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <span class="brand-text">Francisco Pérez</span>
+            </div>
+            
+            <!-- Desktop Navigation Links -->
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="#academico" class="nav-link" data-section="academico">Perfil Académico</a></li>
+                <li><a href="#habilidades" class="nav-link" data-section="habilidades">Habilidades Técnicas</a></li>
+                <li><a href="#extracurriculares" class="nav-link" data-section="extracurriculares">Extracurriculares</a></li>
+                <li><a href="#proyectos" class="nav-link" data-section="proyectos">Proyectos + Certificaciones</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </nav>
 
     <!-- Main Container -->
@@ -37,10 +59,6 @@
                     <div class="contact-item">
                         <span class="contact-icon">📧</span>
                         <a href="mailto:franpt.0510@gmail.com" class="contact-link">franpt.0510@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <a href="tel:+524427470772" class="contact-link">+52 (442) 747 0772</a>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">💻</span>
@@ -98,38 +116,10 @@
                 <p class="institution">Instituto Tecnológico Autónomo de México (ITAM)</p>
             </header>
 
-            <!-- Index Section -->
-            <section id="index" class="content-card fade-in">
-                <div class="card-header">
-                    <div class="accent-line"></div>
-                    <h2 class="section-title">Índice</h2>
-                </div>
-                <div class="card-body">
-                    <div class="index-buttons">
-                        <button class="index-btn" onclick="scrollToSection('academico')">
-                            <span class="index-icon">📚</span>
-                            <span class="index-text">Perfil Académico</span>
-                            <span class="index-arrow">→</span>
-                        </button>
-                        <button class="index-btn" onclick="scrollToSection('habilidades')">
-                            <span class="index-icon">💻</span>
-                            <span class="index-text">Habilidades Técnicas</span>
-                            <span class="index-arrow">→</span>
-                        </button>
-                        <button class="index-btn" onclick="scrollToSection('extracurriculares')">
-                            <span class="index-icon">🏆</span>
-                            <span class="index-text">Extracurriculares</span>
-                            <span class="index-arrow">→</span>
-                        </button>
-                        <button class="index-btn" onclick="scrollToSection('proyectos')">
-                            <span class="index-icon">🚀</span>
-                            <span class="index-text">Proyectos + Certificaciones</span>
-                            <span class="index-arrow">→</span>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
+            <!-- ============================================
+                 SECTION: PERFIL ACADÉMICO
+                 ID must stay as "academico" for navigation
+            -->
             <!-- Perfil Académico -->
             <section id="academico" class="content-card fade-in">
                 <div class="card-header">
@@ -158,6 +148,10 @@
                 </div>
             </section>
 
+            <!-- ============================================
+                 SECTION: HABILIDADES TÉCNICAS
+                 ID must stay as "habilidades" for navigation
+            -->
             <!-- Habilidades Técnicas -->
             <section id="habilidades" class="content-card fade-in">
                 <div class="card-header">
@@ -181,6 +175,10 @@
             </section>
 
             <!-- Extracurriculares -->
+            <!-- ============================================
+                 SECTION: EXTRACURRICULARES
+                 ID must stay as "extracurriculares" for navigation
+            -->
             <section id="extracurriculares" class="content-card fade-in">
                 <div class="card-header">
                     <div class="accent-line"></div>
@@ -251,6 +249,10 @@
                 </div>
             </section>
 
+            <!-- ============================================
+                 SECTION: PROYECTOS + CERTIFICACIONES
+                 ID must stay as "proyectos" for navigation
+            -->
             <!-- Proyectos + Certificaciones -->
             <section id="proyectos" class="content-card fade-in">
                 <div class="card-header">

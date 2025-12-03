@@ -1,10 +1,26 @@
 // ============================================
+// NAVBAR SCROLL BEHAVIOR (Transparent to Solid)
+// ============================================
+const navbar = document.getElementById('topNavbar');
+
+function handleNavbarScroll() {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
+window.addEventListener('scroll', handleNavbarScroll);
+handleNavbarScroll(); // Initial check
+
+// ============================================
 // SMOOTH SCROLLING
 // ============================================
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        const offset = 100; // Offset for sticky nav
+        const offset = 100; // Offset for fixed navbar
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -12,8 +28,23 @@ function scrollToSection(sectionId) {
             top: offsetPosition,
             behavior: 'smooth'
         });
+        
+        // Close mobile menu if open
+        closeMobileMenu();
     }
 }
+
+// Handle nav link clicks
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('data-section') || link.getAttribute('href').substring(1);
+            scrollToSection(sectionId);
+        });
+    });
+});
 
 function scrollToTop() {
     window.scrollTo({
@@ -51,27 +82,31 @@ document.addEventListener('DOMContentLoaded', () => {
 // SCROLLSPY - HIGHLIGHT ACTIVE SECTION
 // ============================================
 const sections = ['academico', 'habilidades', 'extracurriculares', 'proyectos'];
-const navButtons = document.querySelectorAll('.mobile-nav-btn');
 
 function updateActiveSection() {
-    const scrollPosition = window.pageYOffset + 200;
+    const scrollPosition = window.pageYOffset + 150;
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    sections.forEach((sectionId, index) => {
-        const section = document.getElementById(sectionId);
+    // Remove active class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Find current section
+    for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
         if (section) {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Remove active class from all buttons
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to current button
-                if (navButtons[index]) {
-                    navButtons[index].classList.add('active');
+            if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionBottom) {
+                // Add active class to corresponding nav link
+                const activeLink = document.querySelector(`.nav-link[data-section="${sections[i]}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
                 }
+                break;
             }
         }
-    });
+    }
 }
 
 window.addEventListener('scroll', updateActiveSection);
@@ -165,6 +200,44 @@ function createFloatingParticle() {
 if (window.innerWidth > 768) {
     setInterval(createFloatingParticle, 5000);
 }
+
+// ============================================
+// HAMBURGER MENU TOGGLE (Mobile)
+// ============================================
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navbarLinks = document.getElementById('navbarLinks');
+
+function toggleMobileMenu() {
+    hamburgerBtn.classList.toggle('active');
+    navbarLinks.classList.toggle('active');
+    document.body.style.overflow = navbarLinks.classList.contains('active') ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+    hamburgerBtn.classList.remove('active');
+    navbarLinks.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navbarLinks && navbarLinks.classList.contains('active')) {
+        if (!navbarLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            closeMobileMenu();
+        }
+    }
+});
+
+// Close menu on window resize (if resizing to desktop)
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 968) {
+        closeMobileMenu();
+    }
+});
 
 // ============================================
 // HOVER ANIMATIONS FOR CARDS
